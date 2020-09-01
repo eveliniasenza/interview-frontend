@@ -14,13 +14,19 @@ const Exercise01 = () => {
         .then(r => r.json()) // converts response to obj
         .then(user => user[0]) // maps [{..}] to {..} since the API provides an array
         .then(user => {
+          users.push(user)
           setUsers([
             ...users,
-            user
           ])
         })
     }
   }, [])
+
+  const sortedUsers = () => {
+    return users.sort(function(a, b) {
+      return a.id - b.id;
+    })
+  }
 
   /* THE FIX ENDS HERE */
 
@@ -43,7 +49,7 @@ const Exercise01 = () => {
       <h3>Users</h3>
 
       <ul className="list-group">
-        {users.map(user => <li key={`user-${user.id}`} className="list-group-item">
+        {sortedUsers().map(user => <li key={`user-${user.id}`} className="list-group-item">
           <strong>ID:</strong> {user.id} - <strong>Name:</strong> {user.name} <strong>Email:</strong> {user.email}
         </li>)}
       </ul>
