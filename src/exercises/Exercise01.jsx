@@ -36,13 +36,11 @@ const Exercise01 = () => {
 
       <p>We are currently trying to render the first 5 users we obtain from a REST API. The problem is that, for some reason, it's only rendering one of them. Another thing we've noticed is that, sometimes, it renders different user.</p>
 
-      <p>
-        <strong>TODO:</strong>
-        <ul>
-          <li>Fetch and Render the first 5 users</li>
-          <li>Make sure the order is ascendant by ID</li>
-        </ul>
-      </p>
+      <strong>TODO:</strong>
+      <ul>
+        <li>Fetch and Render the first 5 users</li>
+        <li>Make sure the order is ascendant by ID</li>
+      </ul>
 
       <hr className="my-5" />
 
