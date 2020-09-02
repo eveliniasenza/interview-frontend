@@ -1,9 +1,10 @@
 import React from 'react';
-import { Router, Link } from '@reach/router';
+import {Router, Link} from '@reach/router';
 
 import Exercise01 from './exercises/Exercise01'
 import Exercise02 from './exercises/Exercise02'
 import Exercise03 from './exercises/Exercise03'
+
 
 const Welcome = () => {
   return <div>
@@ -15,21 +16,42 @@ const Welcome = () => {
 }
 
 const App = () => {
+
   return <div className="container">
-    <h1 class="py-4">FrontEnd Interview Exercises</h1>
+    <h1 className="py-4">
+      <Link to="/">FrontEnd Interview Exercises</Link>
+    </h1>
 
     <ul className="nav nav-tabs">
       <li className="nav-item">
-        <Link to="/" className="nav-link active">Homepage</Link>
+        <Link
+          to="/exercise01"
+          getProps={({ isCurrent }) => {
+            return {
+              className: isCurrent ? "active nav-link" : "nav-link"
+            };
+          }}
+        >Exercise 01</Link>
       </li>
       <li className="nav-item">
-        <Link to="/exercise01" className="nav-link">Exercise 01</Link>
+        <Link
+          to="/exercise02"
+          getProps={({ isCurrent }) => {
+            return {
+              className: isCurrent ? "active nav-link" : "nav-link"
+            };
+          }}
+        >Exercise 02</Link>
       </li>
       <li className="nav-item">
-        <Link to="/exercise02" className="nav-link">Exercise 02</Link>
-      </li>
-      <li className="nav-item">
-        <Link to="/exercise03" className="nav-link">Exercise 03</Link>
+        <Link
+          to="/exercise03"
+          getProps={({ isCurrent }) => {
+            return {
+              className: isCurrent ? "active nav-link" : "nav-link"
+            };
+          }}
+        >Exercise 03</Link>
       </li>
     </ul>
 
